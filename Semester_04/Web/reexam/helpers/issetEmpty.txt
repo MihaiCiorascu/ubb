@@ -1,0 +1,24 @@
+isset() = TRUE, if $x is:   declared AND 
+                            not null
+
+empty() = TRUE, if $x is:   NOT declared, 
+                            FALSE, 
+                            null, 
+                            "" (empty string)
+                            
+
+
+empty($x) = !isset($x) || $x == false
+
+$x = 0;
+var_dump(isset($x)); // true
+var_dump(empty($x)); // true
+
+$y = null;
+var_dump(isset($y)); // false
+var_dump(empty($y)); // true
+
+unset($z);
+var_dump(isset($z)); // false
+var_dump(empty($z)); // true
+

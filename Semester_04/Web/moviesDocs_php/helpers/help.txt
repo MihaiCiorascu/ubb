@@ -1,0 +1,59 @@
+IMPLODE
+
+implode(',', [1, 2, 3]) // "1,2,3"
+
+$selectedProducts = $_POST['check'];
+$ids = implode(',', array_map('intval', $selectedProducts));
+
+intval('1') = 1; // transforms the string to int
+array_map(primul, doilea)// Aplica functia(primul arg) in array(al doilea arg)
+
+
+EXPLODE
+
+$str = "apple,banana,orange";
+$arr = explode(',', $str);
+// $arr = ["apple", "banana", "orange"]
+
+
+
+
+
+
+GET THE ID OF THE LAST INSERT OF A Primary key column
+
+$orderId = mysqli_insert_id($conn);
+
+
+
+
+
+
+
+EXRACT PREFIX FROM A WORD WITH SEP
+
+$nameParts = preg_split('/[\s-]/', $row['name'], 2); // split the name in 2 parts (white space sep(\s) OR -)
+$category = $nameParts[0]; // after split, extract the first half [0] or second half [1]
+
+
+
+
+
+
+FOR EACH
+
+foreach ($categories as $catCount) {                        
+    if ($catCount >= 2) {
+        $discount += 0.05;
+        break;
+    }
+}
+
+$categories = [
+    'TOY' => 10
+    'CAR' => 24
+]
+
+foreach ($categories as $key => $value) {
+    echo "Category: $key, Count: $value<br>";
+}

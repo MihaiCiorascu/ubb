@@ -1,0 +1,26 @@
+$username = "Bro Code";
+$phone = "123-456-7890";
+
+$username = strtolower($username);
+$username = strtoupper($username);
+$username = trim($username); //remove every white spaces before or after
+$username = str_pad($username, 20, "0"); // "Bro Code000000000" string will have a max size of 20 chars
+$username = str_replace("-", "/", $phone); // "123-456-7890" => "123/456/7890"
+
+$fixedMessage = preg_replace("/$pattern/i", "", $fixedMessage); // asemanator cu str_replace(), dar merge cu regex patterns
+
+preg_match("/$pattern/i", $currMessage, $match) checks if $pattern (a regular expression) matches $currMessage.
+                                                        "/$pattern/i": case-insensitive regex using the value of $pattern
+                                                        $currMessage: the string to test
+                                                        $match: array that stores the match result (first match at index 0)
+
+$equals = strcmp($username, "Bro Code"); // 0 if equal     1 or -1 if diff
+$count = strlen($username); // 8 chars for "Bro Code"
+$index = strpos($username, " "); // returns the index position of the FIRST occ of given character(" ") within the string("Bro Code")
+$firstname = substr($username, 0, 3); // extracts the string from first index given(0) to last index given(3); USE IT WITH strpos
+$lastname = substr($username, 4);
+
+$username = strrev($username); // "Bro Code" => "edoC orB"
+$username = str_shuffle($username); // shuffle the cars in a random order
+
+echo $username;

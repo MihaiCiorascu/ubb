@@ -1,0 +1,74 @@
+IMPLODE
+
+implode(',', [1, 2, 3]) // "1,2,3"
+
+$selectedProducts = $_POST['check'];
+$ids = implode(',', array_map('intval', $selectedProducts));
+$sql = "SELECT * FROM product WHERE id IN ($ids)"; // select all ids that are in a (,) sep list (1,2,3,4) 
+
+intval('1') = 1; // transforms the string to int
+array_map(primul, doilea)// Aplica functia(primul arg) in array(al doilea arg)
+
+
+
+
+EXPLODE
+
+$str = "apple,banana,orange";
+$arr = explode(',', $str);
+// $arr = ["apple", "banana", "orange"]
+
+
+
+
+CONVERT GIVEN VALUE(string, float, boolean, null) INTO an INT
+
+intval("42") -> 42 ;      intval(3.5) -> 3
+
+
+
+GET THE ID OF THE LAST INSERT OF A Primary key column
+
+$orderId = mysqli_insert_id($conn);
+
+
+
+
+
+MOVE THE INTERNAL POINTER OF mysqli_result object TO THE FIRST ROW
+
+$allBadWords = mysqli_query($conn, $sqlBadWords);
+mysqli_data_seek($allBadWords, 0);  ($allBadWords) to the first row (index 0).
+
+
+
+
+
+
+EXRACT PREFIX FROM A WORD WITH SEP
+
+$nameParts = preg_split('/[\s-]/', $row['name'], 2); // split the name in 2 parts (white space sep(\s) OR -)
+$category = $nameParts[0]; // after split, extract the first half [0] or second half [1]
+
+
+
+
+
+
+FOR EACH
+
+foreach ($categories as $catCount) {                        
+    if ($catCount >= 2) {
+        $discount += 0.05;
+        break;
+    }
+}
+
+$categories = [
+    'TOY' => 10
+    'CAR' => 24
+]
+
+foreach ($categories as $key => $value) {
+    echo "Category: $key, Count: $value<br>";
+}
